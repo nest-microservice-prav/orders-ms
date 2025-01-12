@@ -1,0 +1,37 @@
+
+1.- Se crea el microservicio
+nest new orders-ms
+
+2.- Instalamos dependencias
+npm i joi dotenv 
+
+3.- Instalamos esta dependencia para el microservicio
+npm i @nestjs/microservices
+
+4.- Creamos un resource para orders de microservicio
+nest g res orders --no-spec
+
+
+Conexion con la base de datos de postgres
+
+5.- instalamos prisma
+npm install prisma --save-dev
+
+6.- inicializamos prisma
+npx prisma init
+
+7.- Instalamos el cliente de prisma
+npm install @prisma/client
+
+8.- creamos las entidades en el archivo schema.prisma y luego hacemos la migracion
+npx prisma migrate dev --name init
+
+9.- para validar los datos del DTO instalamos esta dependencias
+npm i class-validator class-transformer
+
+
+10.- cuando se creo la otra tabla tenemos que hacer de nuevo otra migracion
+npx prisma migrate dev --name order-item
+
+
+
